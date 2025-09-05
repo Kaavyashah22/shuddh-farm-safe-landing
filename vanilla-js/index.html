@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHUDDH - Drug-Free Livestock Management System</title>
+    <meta name="description" content="AI-powered solution ensuring antibiotic-free livestock production with real-time monitoring and compliance tracking by Team WAVE.">
+    <meta name="keywords" content="livestock management, antibiotic-free, AI monitoring, drug residue detection, compliance tracking">
+    <meta name="author" content="Team WAVE">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: 'hsl(142, 76%, 36%)',
+                            foreground: 'hsl(355, 7%, 97%)',
+                        },
+                        secondary: {
+                            DEFAULT: 'hsl(240, 4.8%, 95.9%)',
+                            foreground: 'hsl(240, 5.9%, 10%)',
+                        },
+                        muted: {
+                            DEFAULT: 'hsl(240, 4.8%, 95.9%)',
+                            foreground: 'hsl(240, 3.8%, 46.1%)',
+                        },
+                        accent: {
+                            DEFAULT: 'hsl(240, 4.8%, 95.9%)',
+                            foreground: 'hsl(240, 5.9%, 10%)',
+                        },
+                        card: {
+                            DEFAULT: 'hsl(0, 0%, 100%)',
+                            foreground: 'hsl(240, 10%, 3.9%)',
+                        },
+                        border: 'hsl(240, 5.9%, 90%)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'scale-in': 'scaleIn 0.5s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.95)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-['Inter'] bg-white">
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0 bg-radial-gradient from-emerald-400 via-transparent to-transparent"></div>
+        </div>
+
+        <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <!-- Left Content -->
+            <div class="space-y-8 animate-fade-in">
+                <div class="space-y-4">
+                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-sm font-medium">
+                        <i data-lucide="zap" class="w-4 h-4 mr-2"></i>
+                        By Team WAVE
+                    </div>
+                    <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
+                        <span class="text-emerald-600">SHUDDH</span>
+                        <br>
+                        <span class="text-gray-800">Drug-Free Livestock</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 leading-relaxed max-w-lg">
+                        AI-powered solution ensuring antibiotic-free livestock production with real-time monitoring and compliance tracking.
+                    </p>
+                </div>
+
+                <!-- Key Features -->
+                <div class="flex flex-wrap gap-6">
+                    <div class="flex items-center space-x-2">
+                        <i data-lucide="shield" class="w-5 h-5 text-emerald-600"></i>
+                        <span class="text-gray-700 font-medium">Drug Residue Detection</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i data-lucide="zap" class="w-5 h-5 text-emerald-600"></i>
+                        <span class="text-gray-700 font-medium">Real-time Monitoring</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i data-lucide="users" class="w-5 h-5 text-emerald-600"></i>
+                        <span class="text-gray-700 font-medium">Compliance Tracking</span>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg font-medium transition-colors group inline-flex items-center">
+                        Learn More
+                        <i data-lucide="arrow-right" class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                    </button>
+                    <button class="border border-gray-300 hover:bg-gray-50 text-gray-700 px-6 py-3 rounded-lg font-medium transition-colors">
+                        Pharmacy Portal
+                    </button>
+                </div>
+
+                <!-- Stats -->
+                <div class="flex flex-wrap gap-8 pt-4">
+                    <div>
+                        <div class="text-2xl font-bold text-emerald-600">100%</div>
+                        <div class="text-sm text-gray-600">Drug-Free Guarantee</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-emerald-600">24/7</div>
+                        <div class="text-sm text-gray-600">Real-time Monitoring</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-emerald-600">AI</div>
+                        <div class="text-sm text-gray-600">Powered Analytics</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Content - Hero Image -->
+            <div class="relative animate-scale-in">
+                <div class="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="hero-farm.jpg" alt="Modern livestock farm with SHUDDH monitoring system" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                
+                <!-- Floating Cards -->
+                <div class="floating-card absolute -top-4 -right-4 bg-white rounded-lg shadow-lg p-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                        <span class="text-sm font-medium">System Active</span>
+                    </div>
+                </div>
+                
+                <div class="floating-card absolute -bottom-4 -left-4 bg-white rounded-lg shadow-lg p-4" style="animation-delay: 0.2s">
+                    <div class="text-center">
+                        <div class="text-lg font-bold text-emerald-600">Zero</div>
+                        <div class="text-xs text-gray-600">Drug Residues</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Innovative Features</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive livestock management with cutting-edge technology for drug-free farming
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature Cards -->
+                <div class="feature-card bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="smartphone" class="w-6 h-6 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Mobile App for Farmers</h3>
+                    <p class="text-gray-600">Easy-to-use mobile interface for real-time livestock monitoring and compliance tracking.</p>
+                </div>
+
+                <div class="feature-card bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="search" class="w-6 h-6 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Drug Residue Detection</h3>
+                    <p class="text-gray-600">Advanced AI-powered detection system for identifying antibiotic residues in livestock.</p>
+                </div>
+
+                <div class="feature-card bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="activity" class="w-6 h-6 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Real-time Monitoring</h3>
+                    <p class="text-gray-600">24/7 continuous monitoring of livestock health and medication status.</p>
+                </div>
+
+                <div class="feature-card bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Compliance Tracking</h3>
+                    <p class="text-gray-600">Automated regulatory compliance monitoring and reporting for export standards.</p>
+                </div>
+
+                <div class="feature-card bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="bell" class="w-6 h-6 text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Smart Notifications</h3>
+                    <p class="text-gray-600">Intelligent alerts for withdrawal periods, health issues, and compliance deadlines.</p>
+                </div>
+
+                <div class="feature-card bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="bar-chart" class="w-6 h-6 text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Analytics Dashboard</h3>
+                    <p class="text-gray-600">Comprehensive analytics and reporting for informed decision-making.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Approach Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Technical Approach</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Cutting-edge technology stack powering drug-free livestock management
+                </p>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="monitor" class="w-6 h-6 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Frontend</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• React Native</li>
+                        <li>• Progressive Web App</li>
+                        <li>• Responsive Design</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="server" class="w-6 h-6 text-green-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Backend & APIs</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Node.js/Express</li>
+                        <li>• RESTful APIs</li>
+                        <li>• Database Integration</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="bell" class="w-6 h-6 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Notifications</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Push Notifications</li>
+                        <li>• SMS Alerts</li>
+                        <li>• Email Updates</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="brain" class="w-6 h-6 text-red-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">AI & Features</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Machine Learning</li>
+                        <li>• Predictive Analytics</li>
+                        <li>• Pattern Recognition</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Methodology -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Our Methodology</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">1</div>
+                        <p class="text-gray-700">Data Collection from IoT sensors</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">2</div>
+                        <p class="text-gray-700">AI-powered analysis and processing</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">3</div>
+                        <p class="text-gray-700">Real-time alerts and notifications</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">4</div>
+                        <p class="text-gray-700">Compliance reporting and analytics</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Preview Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Expected Impact</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Measurable results and comprehensive dashboard insights
+                </p>
+            </div>
+
+            <!-- KPI Cards -->
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-200">
+                    <div class="flex items-center justify-between mb-4">
+                        <i data-lucide="trending-down" class="w-8 h-8 text-green-600"></i>
+                        <span class="text-green-600 text-sm font-medium">↓ 85%</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-1">Reduced Residues</h3>
+                    <p class="text-gray-600">Significant reduction in drug residues detected in livestock products</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-6 border border-blue-200">
+                    <div class="flex items-center justify-between mb-4">
+                        <i data-lucide="trending-up" class="w-8 h-8 text-blue-600"></i>
+                        <span class="text-blue-600 text-sm font-medium">↑ 60%</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-1">Increased Efficiency</h3>
+                    <p class="text-gray-600">Improved farm management efficiency through automated monitoring</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 border border-purple-200">
+                    <div class="flex items-center justify-between mb-4">
+                        <i data-lucide="check-circle" class="w-8 h-8 text-purple-600"></i>
+                        <span class="text-purple-600 text-sm font-medium">↑ 95%</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-1">Enhanced Trust</h3>
+                    <p class="text-gray-600">Increased consumer confidence in drug-free livestock products</p>
+                </div>
+            </div>
+
+            <!-- Dashboard Mockup -->
+            <div class="bg-gray-50 rounded-2xl p-8">
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-4">Compliance Trends</h4>
+                        <div class="h-48 bg-gradient-to-r from-emerald-100 to-green-100 rounded-lg flex items-center justify-center">
+                            <span class="text-gray-600">📈 Interactive Chart Visualization</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-4">Recent Activity</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                <div>
+                                    <p class="font-medium text-gray-900">Compliance check passed</p>
+                                    <p class="text-sm text-gray-600">Green Valley Farm - 2 hours ago</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                                <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                                <div>
+                                    <p class="font-medium text-gray-900">Withdrawal period reminder</p>
+                                    <p class="text-sm text-gray-600">Sunny Acres Ranch - 4 hours ago</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                <div>
+                                    <p class="font-medium text-gray-900">New animal registered</p>
+                                    <p class="text-sm text-gray-600">Mountain View Farm - 6 hours ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="py-20 bg-gradient-to-br from-emerald-50 to-teal-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Impact & Benefits</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Transforming livestock management for a healthier, more sustainable future
+                </p>
+            </div>
+
+            <!-- Target Audience -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="users" class="w-6 h-6 text-green-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Farmers</h3>
+                    <p class="text-gray-600">Improved livestock health management and compliance assurance</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="building" class="w-6 h-6 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Cooperatives</h3>
+                    <p class="text-gray-600">Enhanced supply chain transparency and quality control</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="shield" class="w-6 h-6 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Regulators</h3>
+                    <p class="text-gray-600">Streamlined compliance monitoring and enforcement</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="heart" class="w-6 h-6 text-red-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Consumers</h3>
+                    <p class="text-gray-600">Confidence in drug-free, safe livestock products</p>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-center text-white">
+                <h3 class="text-2xl font-bold mb-4">Join the SHUDDH Revolution</h3>
+                <p class="text-lg mb-6 opacity-90">
+                    Empowering farmers, ensuring compliance, protecting consumers, and promoting sustainable agriculture
+                </p>
+                <button class="bg-white text-emerald-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Get Started Today
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-emerald-400">SHUDDH</h3>
+                    <p class="text-gray-400 mb-4">Drug-free livestock management powered by AI technology.</p>
+                    <p class="text-sm text-gray-500">© 2024 Team WAVE. All rights reserved.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Dashboard</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">API</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Team WAVE</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
