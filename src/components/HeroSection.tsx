@@ -11,40 +11,39 @@ const HeroSection = () => {
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 bg-success-light text-success px-4 py-2 rounded-full text-sm font-medium">
               <Shield className="w-4 h-4" />
-              Food Safety Compliance
+              Smart India Hackathon 2025
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
-              Monitor{" "}
+              SHUDDH:{" "}
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Maximum Residue Limits
-              </span>{" "}
-              & Antimicrobial Usage
+                "Safe Farms, Safe Food, Safe Future."
+              </span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
-              Ensure livestock safety and food compliance with real-time monitoring 
-              of medicine residues and antimicrobial usage. Protect your farm's 
-              reputation and consumer health.
+              First app in India combining withdrawal calculator, AMU records, and alerts. 
+              Digital medicine logging with automatic withdrawal period calculation using 
+              MRLs to ensure livestock product safety and regulatory compliance.
             </p>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4">
             <Button size="lg" className="group">
-              Start Free Trial
+              View Live Demo
               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Button>
             <Button variant="outline" size="lg">
-              Watch Demo
+              Download App
             </Button>
           </div>
 
           <div className="flex items-center gap-8 pt-4">
             <div className="flex items-center gap-2">
               <TrendingUp className="w-5 h-5 text-success" />
-              <span className="text-sm text-muted-foreground">98% Compliance Rate</span>
+              <span className="text-sm text-muted-foreground">90% Reduced Residues</span>
             </div>
             <div className="flex items-center gap-2">
               <Shield className="w-5 h-5 text-success" />
-              <span className="text-sm text-muted-foreground">ISO Certified</span>
+              <span className="text-sm text-muted-foreground">Team WAVE</span>
             </div>
           </div>
         </div>

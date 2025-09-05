@@ -1,30 +1,27 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { TrendingUp, Building2, FileText, CheckCircle } from "lucide-react";
+import { TrendingUp, Users, FileText, CheckCircle } from "lucide-react";
 
 const kpis = [
   {
-    title: "Compliance Rate",
-    value: "98.5%",
-    change: "+2.1%",
-    changeType: "positive",
-    icon: CheckCircle,
-    description: "Farms maintaining full MRL compliance"
+    title: "Reduced Residues",
+    value: "90%",
+    change: "Expected Impact",
+    icon: TrendingUp,
+    description: "Reduction in unsafe residues through automated tracking"
   },
   {
-    title: "Farms Tracked",
-    value: "1,247",
-    change: "+84",
-    changeType: "positive", 
-    icon: Building2,
-    description: "Active farms using Shuddh platform"
+    title: "Increased Efficiency", 
+    value: "30%",
+    change: "Time Saved",
+    icon: Users,
+    description: "Farmers save time with digital record-keeping"
   },
   {
-    title: "Reports Generated",
-    value: "15,632",
-    change: "+1,205",
-    changeType: "positive",
+    title: "Enhanced Trust",
+    value: "100%",
+    change: "Consumer Confidence",
     icon: FileText,
-    description: "Compliance reports this month"
+    description: "Building trust in locally sourced livestock products"
   }
 ];
 
@@ -34,10 +31,10 @@ const DashboardPreview = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Real-Time Farm Intelligence
+            Expected Impact & Benefits
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Monitor key performance indicators and compliance metrics across your entire farming operation
+            Measurable outcomes from implementing SHUDDH across farming communities
           </p>
         </div>
 
@@ -59,12 +56,7 @@ const DashboardPreview = () => {
                   <div className="text-3xl font-bold text-card-foreground">
                     {kpi.value}
                   </div>
-                  <div className={`flex items-center text-sm font-medium ${
-                    kpi.changeType === 'positive' 
-                      ? 'text-success' 
-                      : 'text-destructive'
-                  }`}>
-                    <TrendingUp className="w-3 h-3 mr-1" />
+                  <div className="text-sm font-medium text-success">
                     {kpi.change}
                   </div>
                 </div>
@@ -100,9 +92,9 @@ const DashboardPreview = () => {
                 </h3>
                 <div className="space-y-3">
                   {[
-                    { action: "Milk withdrawal period ended", farm: "Green Valley Farm", time: "2 mins ago" },
-                    { action: "New compliance report", farm: "Sunny Acres", time: "15 mins ago" },
-                    { action: "Medicine logged", farm: "Hill Top Ranch", time: "1 hour ago" }
+                    { action: "Safe consumption alert sent", farm: "Green Valley Dairy", time: "2 mins ago" },
+                    { action: "MRL compliance verified", farm: "Hill Top Poultry", time: "15 mins ago" },
+                    { action: "Medicine withdrawal calculated", farm: "Sunny Acres Cattle", time: "1 hour ago" }
                   ].map((activity, index) => (
                     <div key={index} className="flex items-start gap-3 p-3 bg-muted/50 rounded-lg">
                       <CheckCircle className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />

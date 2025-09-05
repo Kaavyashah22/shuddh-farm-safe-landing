@@ -10,7 +10,10 @@ const Footer = () => {
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
               <Leaf className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="text-xl font-bold">Shuddh</span>
+            <div>
+              <span className="text-xl font-bold">SHUDDH</span>
+              <div className="text-xs text-background/70">by Team WAVE</div>
+            </div>
           </div>
           
           {/* Navigation */}
@@ -23,15 +26,15 @@ const Footer = () => {
           
           {/* Copyright */}
           <div className="text-sm text-background/70">
-            © 2024 Shuddh. All rights reserved.
+            © 2025 Team WAVE - Smart India Hackathon 2025
           </div>
         </div>
         
         <div className="border-t border-background/20 mt-8 pt-8 text-center">
           <p className="text-sm text-background/70 max-w-2xl mx-auto">
-            Shuddh is a digital farm management platform dedicated to ensuring food safety 
-            and responsible antimicrobial use in livestock farming. Protecting consumers 
-            and supporting sustainable agriculture.
+            <strong>Problem Statement SIH25007:</strong> Development of a Digital Farm Management Portal 
+            for Monitoring Maximum Residue Limits (MRL) and Antimicrobial Usage (AMU) in Livestock. 
+            Ensuring food safety through responsible antimicrobial use with a One Health approach.
           </p>
         </div>
       </div>
