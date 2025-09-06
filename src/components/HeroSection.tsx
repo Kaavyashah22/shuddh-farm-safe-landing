@@ -27,13 +27,13 @@ const HeroSection = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="group">
+            <a href="https://shuddh--shuddh-sih.asia-east1.hosted.app/farmer/dashboard" target="_blank"><Button size="lg" className="group">
               View Live Demo
               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button variant="outline" size="lg">
+            </Button></a>
+            <a href="https://shuddh--shuddh-sih.asia-east1.hosted.app/farmer/dashboard" target="_blank"><Button variant="outline" size="lg">
               Pharmacy Poral
-            </Button>
+            </Button></a>
           </div>
 
           <div className="flex items-center gap-8 pt-4">
