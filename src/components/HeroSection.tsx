@@ -32,7 +32,7 @@ const HeroSection = () => {
               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Button></a>
             <a href="https://shuddh--shuddh-sih.asia-east1.hosted.app/shop/dashboard" target="_blank"><Button variant="outline" size="lg">
-              Pharmacy Poral
+              Pharmacy Portal
             </Button></a>
           </div>
 
